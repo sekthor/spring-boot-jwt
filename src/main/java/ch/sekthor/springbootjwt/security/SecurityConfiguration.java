@@ -42,6 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/authenticate").permitAll()
+                .antMatchers("/users").permitAll()
                 .anyRequest().authenticated()
 
                 // don't use sessions, be stateless
