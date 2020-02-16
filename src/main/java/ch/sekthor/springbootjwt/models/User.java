@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class User {
@@ -17,7 +18,7 @@ public class User {
     private String lastname;
 
     @ElementCollection
-    private Collection<String> authorities;
+    private List<String> authorities;
 
     public Long getUserId() {
         return userId;
@@ -59,11 +60,11 @@ public class User {
         this.lastname = lastname;
     }
 
-    public Collection<String> getAuthorities() {
+    public List<String> getAuthorities() {
         return authorities;
     }
 
-    public void setAuthorities(Collection<String> authorities) {
+    public void setAuthorities(List<String> authorities) {
         this.authorities = authorities;
     }
 }
